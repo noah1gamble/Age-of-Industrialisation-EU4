@@ -1,0 +1,54 @@
+﻿l_english:
+ age_of_industrialisation: "Age of Industrialisation"
+ age_of_industrialisation_desc: "The Industrialisation of the first-world economic world powers has led to a downfall of usage of hand tools and non-industrial power-driven machines such as the Steam Engine."
+
+    # REMOVED: \n\n(Enables reduced cost of Manufactory buildings.) graphical issues..
+
+ # Objectives
+
+ obj_autonomy: "The Question of Autonomy"
+ obj_autonomy_desc: "Owns at least 40 provinces with a local autonomy of 0%."
+
+ obj_progressive: "A Progressive Nation"
+ obj_progressive_desc: "Enthrone a Female Ruler of the HRE or your nation."
+
+ obj_multiculturalism: "Multiculturalism"
+ obj_multiculturalism_desc: "Has Foreign heir and ruler OR has a foreign consort and marriage length of 20 years OR has at least 10 accepted cultures."
+
+ obj_great_project_producer: "Great Project Producer"
+ obj_great_project_producer_desc: "Owns one of 3 Great Projects, or is currently building one of them and has at least 50 ducats income while building the project."
+
+ obj_industrial_power: "Global Industrial Power"
+ obj_industrial_power_desc: "Owns at least 5 buildings of each manufactory-type building requiring a total of 30 manufatories total."
+
+ obj_trade_ruler: "Trade Ruler"
+ obj_trade_ruler_desc: "Control more than 90% trade power in your Main Trade City node."
+
+ obj_dissolution_of_the_holy_roman_empire: "The Dissolution of the Holy Roman Empire"
+ obj_dissolution_of_the_holy_roman_empire_desc: "Dissolve the Holy Roman Empire through conquest resulting in no more members of the HRE."
+
+ # Abilities
+
+ ab_reduced_industrial_costs: "Reduced Industrial Costs"
+ 
+ ab_increased_liberal_agitation: "Increased Liberal Agitation"
+
+ ab_standing_armies: "Standing Army" # Must be a Great Power
+
+ ab_naval_dominance: "Naval Dominance" # Must be a Great Power
+
+ ab_subject_integration: "Subject Integration"
+
+ ab_military_leader: "Military Leader"
+
+ ab_embrace_national_pride: "Embrace National Pride" # recognizable historical nations only? - adds national monuments???
+
+ # Special 
+
+ ab_industrialisation_origins: "Industrialisation Origins"
+
+ ab_meiji_restoration: "Meiji Restoration"
+
+ ab_manifest_destiny: "Manifest Destiny"
+
+ ab_italian_ambition: "Italian Ambition"

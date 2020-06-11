@@ -1,0 +1,299 @@
+
+	#################################################################################################################################################################################################
+	# Characterized chiefly by the replacement of hand tools with power-driven machines such as the power loom and the steam engine, and by the concentration of industry in large establishments. #
+	#################################################################################################################################################################################################
+
+age_of_industrialisation = {
+	start = 1780
+	
+	can_start = {
+		is_institution_enabled = industrialisation
+		has_first_revolution_started = yes # Revolution has started
+		revolution_target_exists = no # Must eliminate the Revolution to begin Industrialisation
+	}
+		
+	objectives = {
+
+		# 80% of provinces have no autonomy and has at least 40 provinces	
+
+		obj_autonomy = {	
+			num_of_owned_provinces_with = {
+				value = 40
+				NOT = {
+					local_autonomy = 1
+				}
+			}
+		}
+	
+		obj_progressive = {
+			OR = {
+				AND = {
+					is_female = yes
+					is_emperor = no
+				}
+				AND = {
+					is_emperor = yes
+					is_female = yes
+					allows_female_emperor = yes
+				}
+			}
+		}
+
+		# Has foreign heir, ruler, consort (and has given a foreign consort), or has at least 10 accepted cultures
+
+		obj_multiculturalism = {
+			OR = {
+				AND = {
+					ruler_is_foreigner = yes
+					has_foreign_heir = yes
+				}
+				AND = {
+					has_foreign_consort = yes
+					ruler_consort_marriage_length = 20
+				}
+				num_accepted_cultures = 10
+			}
+
+		}
+
+		# owns one of 3 great projects, or is currently building one of them (must also have at least 50 ducats income - might need balancing later)
+
+		obj_great_project_producer = { 
+			OR = {
+				AND = {
+					has_construction = great_project
+					monthly_income = 50
+				}
+				OR = {
+					has_great_project = kiel_canal
+					has_great_project = suez_canal
+					has_great_project = panama_canal
+				}				
+			}		
+		}
+
+		# Owns at least 5 buildings of each manufactory-type building requiring a total of 30 manufatories total
+
+		obj_industrial_power = {
+			all_owned_province = { 
+				AND = {
+					weapons = 5
+					ramparts = 5
+					impressment_offices = 5
+					state_house = 5
+					soldier_households = 5
+					furnace = 5
+				}
+			}
+		}
+
+		# Currently controls over 90% of an entire trade node, and has a total income of at least X from the node
+
+		obj_trade_ruler = {
+			home_trade_node = { 
+				trade_share = {
+					country = ROOT
+					share = 90
+				}
+			}						
+		}
+
+		# HRE size is 0
+
+		obj_dissolution_of_the_holy_roman_empire = {
+			NOT = {
+				hre_size = 1
+			}
+		}
+	}
+
+	abilities = {
+
+		ab_reduced_industrial_costs = {
+			# Reduced cost of manufactory buildings
+			modifier = {
+				build_cost = -0.50
+				build_time = -0.30
+				production_efficiency = 0.05	
+				administrative_efficiency = 0.01
+			}
+			ai_will_do = {
+				factor = 10
+			}			
+		}
+		
+		ab_increased_liberal_agitation = {
+			# +10% AE (this is a debuff) in exchange for -6 unrest and +10% tax increase
+			modifier = {
+				# Debuffs
+				ae_impact = 0.1
+				stability_cost_to_declare_war = 1
+				# Buffs
+				global_unrest = -6
+				global_tax_modifier = 0.10
+				interest = -2
+				core_creation = -0.2
+			}
+			ai_will_do = {
+				factor = 10
+			}				
+		}
+		
+		ab_standing_armies = {
+			allow = {
+				is_great_power = yes
+			}
+			rule = {
+				force_march_free = yes
+				ignore_coring_distance = yes
+				attack_bonus_in_capital_terrain = yes
+			}
+			modifier = {
+				# Army bonues
+				discipline = 0.05
+				land_morale = 0.05
+				army_tradition_decay = -0.05
+				# Arty bonuses
+				artillery_fire = 0.05
+				artillery_bonus_vs_fort = 0.5
+				backrow_artillery_damage = 0.05
+				# More perhaps?
+			}			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		
+		ab_naval_dominance = {
+			allow = {
+				is_great_power = yes
+			}
+			modifier = {
+				# Naval combat bonuses
+				naval_morale = 0.05
+				leader_naval_fire = 1
+				leader_naval_manuever = 1
+				leader_naval_shock = 1
+				# Navy bonues
+				navy_tradition = 2
+				navy_tradition_decay = -0.05
+				heavy_ship_cost = -0.2
+				global_naval_engagement_modifier = 0.10
+				# Navy maintenence
+				global_ship_cost = -1.0
+				global_ship_repair = 0.05
+				# Navy recruitment
+				global_ship_recruit_speed = -0.1
+			}			
+			ai_will_do = {
+				factor = 10
+			}
+		}
+
+		ab_subject_integration = {
+			# Liberty desire reductions and annexation/integration speed bonus
+			modifier = {
+				reduced_liberty_desire_on_same_continent = 30
+				liberty_desire_from_subject_development = -0.30
+				diplomatic_annexation_cost = -0.05
+				diplomatic_reputation = 2
+			}	
+			ai_will_do = {
+				factor = 10
+			}			
+		}
+
+		ab_military_leader = {
+			# Bonuses to the leader as a military general, + 2 all ruler stats?
+			effect = {
+				# Ruler
+				define_ruler_to_general = {
+					fire = 6
+					shock = 6
+					manuever = 6
+					siege = 4
+				}
+				# Advisor to Ruler
+				create_general = { 
+					tradition = 100
+					add_fire = 6
+					add_shock = 6
+					add_manuever = 6
+					add_siege = 3
+					culture = ROOT
+				}
+			}
+			modifier = {
+				army_tradition_decay = -0.10
+			}
+			ai_will_do = {
+				factor = 10
+			}				
+		}
+		
+		ab_embrace_national_pride = {
+			modifier = {
+				state_maintenance_modifier = -0.30
+			}		
+			ai_will_do = {
+				factor = 10
+			}				
+		}
+
+		# Special
+		
+		ab_industrialisation_origins = {
+			allow = {
+				tag = GBR
+			}
+			modifier = {
+				build_cost = -0.20
+				build_time = -0.20
+			}
+			ai_will_do = {
+				factor = 100
+			}				
+		}
+		
+		ab_meiji_restoration = {
+			allow = {
+				tag = JAP
+			}
+			modifier = {
+				land_morale = 0.10
+				discipline = 0.05
+			}
+			ai_will_do = {
+				factor = 100
+			}				
+		}
+
+		ab_manifest_destiny = {
+			allow = {
+				tag = USA
+			}
+			modifier = {
+				core_creation = -0.20
+				enemy_core_creation = 0.20
+				warscore_cost_vs_other_religion = -0.10
+			}
+			ai_will_do = {
+				factor = 100
+			}				
+		}
+
+		ab_italian_ambition = {		
+			allow = {
+				tag = ITA
+			}
+			modifier = {
+				reduced_liberty_desire = 50
+				years_of_nationalism = -10
+				min_autonomy_in_territories = -0.08
+			}
+			ai_will_do = {
+				factor = 100
+			}	
+		}	
+	}
+}
