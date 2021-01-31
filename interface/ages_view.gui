@@ -60,7 +60,7 @@ guiTypes = {
 				frame = 4
 			}
 			iconType = {
-				name ="icon_age_of_industrialization"
+				name ="icon_age_of_industrialisation"
 				spriteType = "GFX_icon_age_s"
 				position = { x= -15 y = 182 }
 				frame = 5
@@ -169,10 +169,10 @@ guiTypes = {
 			}			
 		}	
 		
-		### AGE OF INDUSTRIALIZATION ###
+		### AGE OF INDUSTRIALISATION ###
 
 		WindowType = {
-			name = "age_of_industrialization"
+			name = "age_of_industrialisation"
 			position = { x= 35 y = -29}
 			upsound = age_of_revolutions
 

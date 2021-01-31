@@ -1,21 +1,27 @@
 
-	#################################################################################################################################################################################################
-	# Characterized chiefly by the replacement of hand tools with power-driven machines such as the power loom and the steam engine, and by the concentration of industry in large establishments. #
-	#################################################################################################################################################################################################
+	#######################################
+	# Age of Industrialisation Unique Age #
+	#######################################
 
 age_of_industrialisation = {
 	start = 1780
 	
 	can_start = {
-		is_institution_enabled = industrialisation
-		has_first_revolution_started = yes # Revolution has started
-		revolution_target_exists = no # Must eliminate the Revolution to begin Industrialisation
+		AND = {
+			OR = { # Date is either 1780 or the Age of Industrialsation has already begun
+				date = 1780
+				is_institution_enabled = industrialisation
+			}
+			OR = { # Revolution has started OR Must eliminate the Revolution to begin Age of Industrialisation
+				has_first_revolution_started = yes 
+				revolution_target_exists = no 
+			}
+		}
 	}
 		
 	objectives = {
 
 		# 80% of provinces have no autonomy and has at least 40 provinces	
-
 		obj_autonomy = {	
 			num_of_owned_provinces_with = {
 				value = 40
@@ -61,13 +67,17 @@ age_of_industrialisation = {
 		obj_great_project_producer = { 
 			OR = {
 				AND = {
-					has_construction = great_project
+					any_owned_province = { 
+						has_construction = great_project
+					}
 					monthly_income = 50
 				}
 				OR = {
-					has_great_project = kiel_canal
-					has_great_project = suez_canal
-					has_great_project = panama_canal
+					any_owned_province = { 
+						has_great_project = kiel_canal
+						has_great_project = suez_canal
+						has_great_project = panama_canal
+					}					
 				}				
 			}		
 		}
@@ -126,13 +136,13 @@ age_of_industrialisation = {
 			# +10% AE (this is a debuff) in exchange for -6 unrest and +10% tax increase
 			modifier = {
 				# Debuffs
-				ae_impact = 0.1
+				ae_impact = 0.05
 				stability_cost_to_declare_war = 1
 				# Buffs
-				global_unrest = -6
+				global_unrest = -2
 				global_tax_modifier = 0.10
-				interest = -2
-				core_creation = -0.2
+				interest = -1
+				core_creation = -0.1
 			}
 			ai_will_do = {
 				factor = 10
@@ -150,13 +160,13 @@ age_of_industrialisation = {
 			}
 			modifier = {
 				# Army bonues
-				discipline = 0.05
-				land_morale = 0.05
-				army_tradition_decay = -0.05
+				discipline = 0.02
+				land_morale = 0.02
+				army_tradition_decay = -0.02
 				# Arty bonuses
-				artillery_fire = 0.05
-				artillery_bonus_vs_fort = 0.5
-				backrow_artillery_damage = 0.05
+				artillery_fire = 0.01
+				artillery_bonus_vs_fort = 0.1
+				backrow_artillery_damage = 0.01
 				# More perhaps?
 			}			
 			ai_will_do = {

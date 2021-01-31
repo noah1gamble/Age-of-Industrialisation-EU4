@@ -2,30 +2,28 @@
  age_of_industrialisation: "Age of Industrialisation"
  age_of_industrialisation_desc: "The Industrialisation of the first-world economic world powers has led to a downfall of usage of hand tools and non-industrial power-driven machines such as the Steam Engine."
 
-    # REMOVED: \n\n(Enables reduced cost of Manufactory buildings.) graphical issues..
-
  # Objectives
 
  obj_autonomy: "The Question of Autonomy"
- obj_autonomy_desc: "Owns at least 40 provinces with a local autonomy of 0%."
+ obj_autonomy_desc: "Owns at least 40 provinces with a local autonomy of 0."
 
  obj_progressive: "A Progressive Nation"
- obj_progressive_desc: "Enthrone a Female Ruler of the HRE or your nation."
+ obj_progressive_desc: "Enthrone a Female Ruler of the §YHoly Roman Empire§! or your nation."
 
  obj_multiculturalism: "Multiculturalism"
- obj_multiculturalism_desc: "Has Foreign heir and ruler OR has a foreign consort and marriage length of 20 years OR has at least 10 accepted cultures."
+ obj_multiculturalism_desc: "Has Foreign heir and ruler §YOR§! has a foreign consort and marriage length of 20 years §YOR§! has at least 10 accepted cultures."
 
  obj_great_project_producer: "Great Project Producer"
- obj_great_project_producer_desc: "Owns one of 3 Great Projects, or is currently building one of them and has at least 50 ducats income while building the project."
+ obj_great_project_producer_desc: "Owns one of 3 Great Projects, §YOR§! is currently building one of them and has at least 50 ducats income while building the project."
 
  obj_industrial_power: "Global Industrial Power"
- obj_industrial_power_desc: "Owns at least 5 buildings of each manufactory-type building requiring a total of 30 manufatories total."
+ obj_industrial_power_desc: "Owns at least 5 buildings of each manufactory-type building requiring a total of 30 manufactories total."
 
  obj_trade_ruler: "Trade Ruler"
  obj_trade_ruler_desc: "Control more than 90% trade power in your Main Trade City node."
 
  obj_dissolution_of_the_holy_roman_empire: "The Dissolution of the Holy Roman Empire"
- obj_dissolution_of_the_holy_roman_empire_desc: "Dissolve the Holy Roman Empire through conquest resulting in no more members of the HRE."
+ obj_dissolution_of_the_holy_roman_empire_desc: "Dissolve the §YHoly Roman Empire§! through conquest resulting in no more members of the HRE."
 
  # Abilities
 
