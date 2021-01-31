@@ -7,15 +7,10 @@ age_of_industrialisation = {
 	start = 1780
 	
 	can_start = {
-		AND = {
-			OR = { # Date is either 1780 or the Age of Industrialsation has already begun
-				date = 1780
-				is_institution_enabled = industrialisation
-			}
-			OR = { # Revolution has started OR Must eliminate the Revolution to begin Age of Industrialisation
-				has_first_revolution_started = yes 
-				revolution_target_exists = no 
-			}
+		is_institution_enabled = industrialization
+		OR = { # Revolution has started OR Must eliminate the Revolution to begin Age of Industrialisation
+			has_first_revolution_started = yes 
+			revolution_target_exists = no 
 		}
 	}
 		
