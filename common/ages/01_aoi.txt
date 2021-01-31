@@ -124,8 +124,8 @@ age_of_industrialisation = {
 		ab_reduced_industrial_costs = {
 			# Reduced cost of manufactory buildings
 			modifier = {
-				build_cost = -0.50
-				build_time = -0.30
+				build_cost = -0.10
+				build_time = -0.10
 				production_efficiency = 0.05	
 				administrative_efficiency = 0.01
 			}
@@ -162,14 +162,15 @@ age_of_industrialisation = {
 			}
 			modifier = {
 				# Army bonues
-				discipline = 0.02
-				land_morale = 0.02
-				army_tradition_decay = -0.02
+				discipline = 0.01
+				land_morale = 0.01
+				army_tradition_decay = -0.01
 				# Arty bonuses
 				artillery_fire = 0.01
 				artillery_bonus_vs_fort = 0.1
 				backrow_artillery_damage = 0.01
-				# More perhaps?
+				# Army maintenence
+				land_maintenance_modifier = -0.10 
 			}			
 			ai_will_do = {
 				factor = 10
@@ -182,18 +183,18 @@ age_of_industrialisation = {
 			}
 			modifier = {
 				# Naval combat bonuses
-				naval_morale = 0.05
+				naval_morale = 0.01
 				leader_naval_fire = 1
 				leader_naval_manuever = 1
 				leader_naval_shock = 1
 				# Navy bonues
-				navy_tradition = 2
-				navy_tradition_decay = -0.05
-				heavy_ship_cost = -0.2
-				global_naval_engagement_modifier = 0.10
+				navy_tradition = 1
+				navy_tradition_decay = -0.01
+				heavy_ship_cost = -0.1
+				global_naval_engagement_modifier = 0.01
 				# Navy maintenence
-				global_ship_cost = -1.0
-				global_ship_repair = 0.05
+				global_ship_cost = -0.5
+				global_ship_repair = 0.02
 				# Navy recruitment
 				global_ship_recruit_speed = -0.1
 			}			
@@ -205,10 +206,10 @@ age_of_industrialisation = {
 		ab_subject_integration = {
 			# Liberty desire reductions and annexation/integration speed bonus
 			modifier = {
-				reduced_liberty_desire_on_same_continent = 30
-				liberty_desire_from_subject_development = -0.30
+				reduced_liberty_desire_on_same_continent = 20
+				liberty_desire_from_subject_development = -0.25
 				diplomatic_annexation_cost = -0.05
-				diplomatic_reputation = 2
+				diplomatic_reputation = 1
 			}	
 			ai_will_do = {
 				factor = 10
@@ -257,10 +258,11 @@ age_of_industrialisation = {
 		ab_industrialisation_origins = {
 			allow = {
 				tag = GBR
+				tag = ENG
 			}
 			modifier = {
-				build_cost = -0.20
-				build_time = -0.20
+				build_cost = -0.10
+				build_time = -0.10
 			}
 			ai_will_do = {
 				factor = 100
@@ -270,6 +272,7 @@ age_of_industrialisation = {
 		ab_meiji_restoration = {
 			allow = {
 				tag = JAP
+				tag = ASK
 			}
 			modifier = {
 				land_morale = 0.10
@@ -285,8 +288,8 @@ age_of_industrialisation = {
 				tag = USA
 			}
 			modifier = {
-				core_creation = -0.20
-				enemy_core_creation = 0.20
+				core_creation = -0.10
+				enemy_core_creation = 0.10
 				warscore_cost_vs_other_religion = -0.10
 			}
 			ai_will_do = {
@@ -297,6 +300,9 @@ age_of_industrialisation = {
 		ab_italian_ambition = {		
 			allow = {
 				tag = ITA
+				tag = NAP
+				tag = TUS
+				tag = PAP
 			}
 			modifier = {
 				reduced_liberty_desire = 50
