@@ -85,14 +85,16 @@ age_of_industrialisation = {
 		# Owns at least 5 buildings of each manufactory-type building requiring a total of 30 manufatories total
 
 		obj_industrial_power = {
-			all_owned_province = { 
+			any_owned_province = { 
 				AND = {
-					weapons = 5
-					ramparts = 5
-					impressment_offices = 5
-					state_house = 5
-					soldier_households = 5
-					furnace = 5
+					ROOT = {
+						weapons = 5
+						ramparts = 5
+						impressment_offices = 5
+						state_house = 5
+						soldier_households = 5
+						furnace = 5
+					}
 				}
 			}
 		}
